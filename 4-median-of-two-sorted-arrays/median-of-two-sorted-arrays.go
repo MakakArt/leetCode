@@ -9,7 +9,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
     
 	totalLeft := (m + n + 1) / 2
 
-	for left <= right {
+	for {
 		cut1 := (left + right) / 2
 		cut2 := totalLeft - cut1
 
