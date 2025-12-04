@@ -3,9 +3,6 @@ func findPoisonedDuration(timeSeries []int, duration int) int {
     for _, r := range timeSeries {
         if r < p {
             nP := r + duration
-            if nP < p {
-                continue
-            }
             count += nP - p
             p = nP
         } else {
