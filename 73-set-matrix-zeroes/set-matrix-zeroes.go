@@ -6,14 +6,14 @@ func setZeroes(matrix [][]int)  {
             if matrix[i][j] == 0 {
                 row = true
                 columns[j] = true
-            }
-            if columns[j] { 
-                matrix[i][j] = 0
                 k := i
                 for k > -1 {
                     matrix[k][j] = 0
                     k--
                 }
+            }
+            if columns[j] { 
+                matrix[i][j] = 0
             }
         }
         if row {
