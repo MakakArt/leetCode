@@ -18,7 +18,7 @@ func setZeroes(matrix [][]int)  {
             }
         }
         if row {
-            copy(matrix[i], empty)
+            matrix[i] = empty
         }
         row = false
     }
