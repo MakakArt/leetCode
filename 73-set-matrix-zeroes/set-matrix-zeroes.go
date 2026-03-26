@@ -16,6 +16,7 @@ func setZeroes(matrix [][]int)  {
                     matrix[i][k] = 0
                     k--
                 }
+                continue
             }
             if columns[j] || row { 
                 matrix[i][j] = 0
