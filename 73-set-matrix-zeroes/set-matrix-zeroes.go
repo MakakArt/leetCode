@@ -1,6 +1,7 @@
 func setZeroes(matrix [][]int)  {
     var row bool
     columns := make([]bool, len(matrix[0]))
+    empty := make([]int, len(matrix[0]))
     for i := 0; i < len(matrix); i++ {
         for j := 0; j < len(matrix[i]); j++ {
             if matrix[i][j] == 0 {
@@ -17,7 +18,7 @@ func setZeroes(matrix [][]int)  {
             }
         }
         if row {
-            matrix[i] = make([]int, len(matrix[i]))
+            copy(matrix[i], empty)
         }
         row = false
     }
