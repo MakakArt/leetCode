@@ -1,22 +1,16 @@
 func sortColors(nums []int)  {
-    var col [3]int
-    for _, r := range nums {
-        switch r{
+    l, m, h := 0, 0, len(nums) - 1
+    for m <= h {
+        switch nums[m] {
             case 0:
-                col[0]++
+                nums[l], nums[m] = nums[m], nums[l]
+                l++
+                m++
             case 1:
-                col[1]++
+                m++
             case 2:
-                col[2]++
+                nums[h], nums[m] = nums[m], nums[h]
+                h--
         }
-    }
-    for i := 0; i < col[0]; i++ {
-        nums[i] = 0
-    }
-    for i := col[0]; i < col[0] + col[1]; i++ {
-        nums[i] = 1
-    }
-    for i := col[0] + col[1]; i < len(nums); i++ {
-        nums[i] = 2
     }
 }
