@@ -6,11 +6,11 @@ func sortColors(nums []int)  {
                 nums[l], nums[m] = nums[m], nums[l]
                 l++
                 m++
-            case 1:
-                m++
             case 2:
                 nums[h], nums[m] = nums[m], nums[h]
                 h--
+            default: 
+                m++
         }
     }
 }
