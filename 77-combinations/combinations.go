@@ -1,20 +1,19 @@
 func combine(n int, k int) [][]int {
     var result [][]int
-    var r func (start int, body []int)
-    r = func(start int, body []int) {
-        if start > n {
-            return
-        }
-        for i := start; i <= n; i++ {
-            if len(body) + 1 == k {
-                res := make([]int, k)
-                copy(res, append(body, i))
-                result = append(result, res)
-                continue
+    buff := make([]int, k)
+    var r func (start, depth int)
+    r = func(start, depth int) {
+        if depth == k {
+            res := make([]int, k)
+            copy(res, buff)
+            result = append(result, res)
+        } else {
+            for i := start; i <= n; i++ {
+                buff[depth] = i
+                r(i+1, depth+1)
             }
-            r(i+1, append(body, i))
         }
     }
-    r(1, []int{})
+    r(1, 0)
     return result
 }
