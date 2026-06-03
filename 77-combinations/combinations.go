@@ -6,12 +6,13 @@ func combine(n int, k int) [][]int {
             return
         }
         for i := start; i <= n; i++ {
-            r(i+1, append(body, i))
             if len(body) + 1 == k {
                 res := make([]int, k)
                 copy(res, append(body, i))
                 result = append(result, res)
+                continue
             }
+            r(i+1, append(body, i))
         }
     }
     r(1, []int{})
