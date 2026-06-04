@@ -8,7 +8,7 @@ func combine(n int, k int) [][]int {
             copy(res, buff)
             result = append(result, res)
         } else {
-            for i := start; i <= n; i++ {
+            for i := start; i <= n-(k-depth)+1; i++ {
                 buff[depth] = i
                 r(i+1, depth+1)
             }
