@@ -6,9 +6,6 @@ func subsets(nums []int) [][]int {
         res := make([]int, curr)
         copy(res, buff)
         result = append(result, res)
-        if depth > len(nums) {
-            return
-        }
         for i := depth; i < len(nums); i++ {
             buff[curr] = nums[i]
             r(i+1, curr+1)
