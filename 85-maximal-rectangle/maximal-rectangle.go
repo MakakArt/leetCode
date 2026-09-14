@@ -9,7 +9,6 @@ func maximalRectangle(matrix [][]byte) int {
                 hist[j]++
             }
         }
-        fmt.Println("hist", hist)
         // it stores only indeces
         var stack []int
         for n, h := range hist {
